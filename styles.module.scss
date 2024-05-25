@@ -1,0 +1,127 @@
+.productCard {
+    display: flex;
+    width: 90%;
+    max-width: 270px;
+    height: fit-content;
+    max-height: 480px;
+    overflow: hidden;
+    flex-grow: 1;
+    min-width: 100px;
+    margin: 10px;
+    flex-direction: column;
+    cursor: pointer;
+    &::selection{
+      display: none;
+    }
+    img{
+        width: 100%;
+        &::selection{
+          display: none;
+        }
+    }
+    .productInfo {
+      margin-top: 15px;
+      h3{
+        font-size: 0.9em;
+        color: var(--txt);
+        font-weight: 400;
+        &::selection{
+          display: none;
+        }
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+      p{
+        color: var(--txt);
+        &::selection{
+          display: none;
+        }
+        font-size: 0.9em;
+        font-weight: 400;
+      }
+    }
+}
+$skeletonLoadingColor: rgb(64, 64, 64);
+$skeletonLoadingColor2: rgb(107, 107, 107);
+
+.productSkeleton{
+  display: flex;
+  width: 90%;
+  max-width: 270px;
+  height: fit-content;
+  overflow: hidden;
+  flex-grow: 1;
+  margin: 10px;
+  flex-direction: column;
+  &::selection{
+    display: none;
+  }
+  .productImg{
+    width: 100%;
+    min-height: 350px;
+    background-color: $skeletonLoadingColor;
+    animation: skeleton 2s infinite;
+    &::selection{
+      display: none;
+    }
+  }
+  .productInfo {
+    margin-top: 15px;
+    h3{
+      width: 80%;
+      height: 15px;
+      background-color: $skeletonLoadingColor;
+      border-radius: 50px;
+      animation: skeleton 2s infinite;
+      
+    }
+    p{
+      width: 30%;
+      height: 15px;
+      margin-top: 5px;
+      background-color: $skeletonLoadingColor;
+      border-radius: 50px;
+      animation: skeleton 2s infinite;
+    }
+  }
+}
+
+
+@keyframes skeleton {
+  0% {
+    background-color: $skeletonLoadingColor;
+  }
+  50%{
+    background-color: $skeletonLoadingColor2;
+  }
+  100% {
+    background-color: $skeletonLoadingColor;
+  }
+}
+
+
+
+@media screen and  (min-width:320px) and (max-width:480px){
+}
+
+@media screen and (min-width:481px) and (max-width:750px){
+  .productCard{
+    width: 90%;
+  }
+  .productSkeleton{
+    width: 90%;
+  }
+}
+
+@media screen and (min-width:816px) and (max-width:1024px){
+    
+}
+
+@media screen and (min-width:1025px){
+
+}
+
+@media screen and (min-width:1200px){
+    
+}
